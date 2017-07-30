@@ -7,7 +7,7 @@ Vue.component('usuarios', {
                     return {
                         nombre: `${usuario.name.title} ${usuario.name.first} ${usuario.name.last}`,
                         correo: usuario.email,
-                        foto: usuario.picture.medium,
+                        foto: usuario.picture.large,
                     }
                 })
                 this.usuarios = listado;
@@ -19,6 +19,11 @@ Vue.component('usuarios', {
         }
     } 
 })
+
+Vue.component('usuario', {
+    props: ['datos'],
+    template: '#usuario-template',
+});
 
 new Vue({
     el: 'main',

@@ -25,9 +25,40 @@
           </section>
           <hr>
           <section>
-            <p v-for="usuario in usuarios">{{usuario}}</p>
+            <div class="columns is-multiline">
+              <usuario :datos="usuario" v-for="usuario in usuarios"></usuario>
+            </div>
           </section>
       </div>
+  </template>
+
+  <template id="usuario-template">
+      <div class="column is-3">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-256x256">
+              <img :src="datos.foto" :alt="datos.name">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <p class="title is-5">{{datos.nombre}}</p>
+                <p class="subtitle is-6">{{datos.correo}}</p>
+              </div>
+            </div>
+
+            <div class="content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Phasellus nec iaculis mauris. <a href="#">@bulmaio</a>.
+              <a href="#">#css</a> <a href="#">#responsive</a>
+              <br>
+              <small>11:09 PM - 1 Jan 2016</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    
   </template>
 
   <script src="https://unpkg.com/vue"></script>
