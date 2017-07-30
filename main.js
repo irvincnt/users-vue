@@ -1,11 +1,23 @@
 Vue.component('usuarios', {
-    template: '<div></div>',
+    template: '#usuarios-template',
     mounted(){
         axios.get('https://randomuser.me/api/?results=100')
             .then((datos) => {
-                console.log(datos);
+                const listado = datos.data.results.map((usuario) => {
+                    return {
+                        nombre: `${usuario.name.title} ${usuario.name.first} ${usuario.name.last}`,
+                        correo: usuario.email,
+                        foto: usuario.picture.medium,
+                    }
+                })
+                this.usuarios = listado;
             });
     },
+    data() {
+        return {
+            usuarios: [],
+        }
+    } 
 })
 
 new Vue({

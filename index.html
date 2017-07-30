@@ -12,6 +12,20 @@
     <usuarios></usuarios>
   </main>
 
+
+  <template id="usuarios-template">
+      <div>
+          <section>
+            <slot></slot>
+            <input type="search" placeholder="Filtrar usuarios">
+          </section>
+          <hr>
+          <section>
+            <p v-for="usuario in usuarios">{{usuario}}</p>
+          </section>
+      </div>
+  </template>
+
   <script src="https://unpkg.com/vue"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.js"></script> 
   <script src="main.js"></script>
