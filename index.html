@@ -19,14 +19,14 @@
             <div class="field column is-half is-offset-one-quarter">
               <slot></slot>
               <div class="control">
-                <input class="input" type="search" placeholder="Filtrar usuarios">
+                <input class="input" type="search" placeholder="Filtrar usuarios" v-model="busqueda">
               </div>
             </div>
           </section>
           <hr>
           <section>
             <div class="columns is-multiline">
-              <usuario :datos="usuario" v-for="usuario in usuarios"></usuario>
+              <usuario :datos="usuario" v-for="usuario in filtrarUsuarios"></usuario>
             </div>
           </section>
       </div>
