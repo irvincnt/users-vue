@@ -8,16 +8,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css">
 </head>
 <body>
-  <main>
+  <main class="container">
     <usuarios></usuarios>
   </main>
 
 
   <template id="usuarios-template">
       <div>
-          <section>
-            <slot></slot>
-            <input type="search" placeholder="Filtrar usuarios">
+          <section class="columns">
+            <div class="field column is-half is-offset-one-quarter">
+              <label class="label">Name</label>
+              <div class="control">
+                <input class="input" type="search" placeholder="Filtrar usuarios">
+              </div>
+            </div>
           </section>
           <hr>
           <section>
